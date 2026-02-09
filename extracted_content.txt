@@ -1,0 +1,67 @@
+﻿============================================================
+PDF: Eldamat_Company_Profile.pdf
+Pages: 12
+============================================================
+
+--- PAGE 1 ---
+
+
+[Extracted image: extracted_images/page1_img1.jpeg]
+
+--- PAGE 2 ---
+
+
+[Extracted image: extracted_images/page2_img1.jpeg]
+
+--- PAGE 3 ---
+
+
+[Extracted image: extracted_images/page3_img1.jpeg]
+
+--- PAGE 4 ---
+
+
+[Extracted image: extracted_images/page4_img1.jpeg]
+
+--- PAGE 5 ---
+
+
+[Extracted image: extracted_images/page5_img1.jpeg]
+
+--- PAGE 6 ---
+
+
+[Extracted image: extracted_images/page6_img1.jpeg]
+
+--- PAGE 7 ---
+
+
+[Extracted image: extracted_images/page7_img1.jpeg]
+
+--- PAGE 8 ---
+
+
+[Extracted image: extracted_images/page8_img1.jpeg]
+
+--- PAGE 9 ---
+
+
+[Extracted image: extracted_images/page9_img1.jpeg]
+
+--- PAGE 10 ---
+
+
+[Extracted image: extracted_images/page10_img1.jpeg]
+
+--- PAGE 11 ---
+
+
+[Extracted image: extracted_images/page11_img1.jpeg]
+
+--- PAGE 12 ---
+
+
+[Extracted image: extracted_images/page12_img1.jpeg]
+
+============================================================
+Extraction complete!
