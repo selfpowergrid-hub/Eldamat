@@ -21,7 +21,7 @@ const services = [
             'Rapid Alarm Response - Quick reaction to emergencies',
             'Event Security & Crowd Control',
         ],
-        image: 'https://images.unsplash.com/photo-1628173142721-692795495914?q=80&w=1200',
+        image: '/images/services/guarding.jpg',
         highlight: 'All guards must have Certificate of Good Conduct from CID Headquarters',
     },
     {
@@ -41,7 +41,7 @@ const services = [
             'Motion Detection & Smart Alerts',
             'Professional Installation & Maintenance',
         ],
-        image: 'https://images.unsplash.com/photo-1557597774-9d2739f85a94?q=80&w=1200',
+        image: '/images/services/cctv.jpg',
         highlight: 'Supply, installation, servicing and maintenance of all brands',
     },
     {
@@ -61,7 +61,7 @@ const services = [
             'Specialized Women Protection',
             'Counter-Terrorism Trained Personnel',
         ],
-        image: 'https://images.unsplash.com/photo-1540306301335-e67f1dc688de?q=80&w=1200',
+        image: '/images/services/vip.jpg',
         highlight: 'Discreet, professional, and highly trained bodyguards',
     },
     {
@@ -81,7 +81,7 @@ const services = [
             'Professional Dog Handler Training',
             'K9 Unit Deployment',
         ],
-        image: 'https://images.unsplash.com/photo-1589366114441-28564177d853?q=80&w=1200',
+        image: '/images/services/dogs.jpg',
         highlight: 'All dogs are professionally trained for security operations',
     },
     {
@@ -102,7 +102,7 @@ const services = [
             'Fire Safety Training Programs',
             'Annual Servicing & Maintenance',
         ],
-        image: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=1200',
+        image: '/images/services/fire.jpg',
         highlight: 'Certified fire safety equipment and trained instructors',
     },
     {
@@ -122,7 +122,7 @@ const services = [
             'Staff Screening & HR Checks',
             'Surveillance Operations',
         ],
-        image: 'https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5c?q=80&w=1200',
+        image: '/images/services/investigations.jpg',
         highlight: 'Confidential and professional investigation services',
     },
     {
@@ -142,7 +142,7 @@ const services = [
             'Security Audits & Consultancy',
             'Staff Recruitment Services',
         ],
-        image: 'https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=1200',
+        image: '/images/services/guarding.jpg',
         highlight: 'PSRA-compliant training programs',
     },
     {
@@ -162,7 +162,7 @@ const services = [
             'Gate Automation',
             'Integrated Security Systems',
         ],
-        image: 'https://images.unsplash.com/photo-1558223108-63098259ca54?q=80&w=1200',
+        image: '/images/services/cctv.jpg',
         highlight: 'Cutting-edge technology for modern security needs',
     },
 ];

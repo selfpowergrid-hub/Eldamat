@@ -14,24 +14,24 @@ const services: Service[] = [
     {
         icon: (
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-        ),
-        title: 'Security Guarding',
-        description: 'Professional armed and unarmed security personnel for your premises, events, and VIP protection.',
-        image: 'https://images.unsplash.com/photo-1628173142721-692795495914?q=80&w=800',
-        features: ['24/7 Coverage', 'Trained Guards', 'PSRA Licensed'],
-    },
-    {
-        icon: (
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
         ),
         title: 'CCTV & Surveillance',
         description: 'State-of-the-art CCTV systems with remote monitoring, HD cameras, and smart alerts.',
-        image: 'https://images.unsplash.com/photo-1557597774-9d2739f85a94?q=80&w=800',
+        image: '/images/services/cctv.jpg',
         features: ['4K Cameras', 'Remote Access', 'Cloud Storage'],
+    },
+    {
+        icon: (
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+        ),
+        title: 'Security guarding',
+        description: 'Professional armed and unarmed security personnel for your premises, events, and VIP protection.',
+        image: '/images/services/guarding.jpg',
+        features: ['24/7 Coverage', 'Trained Guards', 'PSRA Licensed'],
     },
     {
         icon: (
@@ -39,9 +39,9 @@ const services: Service[] = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
         ),
-        title: 'VIP Protection',
+        title: 'vip Protection',
         description: 'Executive protection services for high-profile individuals, CEOs, and dignitaries.',
-        image: 'https://images.unsplash.com/photo-1540306301335-e67f1dc688de?q=80&w=800',
+        image: '/images/services/vip.jpg',
         features: ['Close Protection', 'Secure Transport', 'Advance Recon'],
     },
     {
@@ -52,7 +52,7 @@ const services: Service[] = [
         ),
         title: 'Dog Services',
         description: 'Trained security dogs including German Shepherds, Rottweilers, and Dobermans.',
-        image: 'https://images.unsplash.com/photo-1589366114441-28564177d853?q=80&w=800',
+        image: '/images/services/dogs.jpg',
         features: ['Guard Dogs', 'Patrol Dogs', 'K9 Training'],
     },
     {
@@ -62,9 +62,9 @@ const services: Service[] = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
             </svg>
         ),
-        title: 'Fire Safety',
+        title: 'fire safety',
         description: 'Comprehensive fire safety solutions including equipment, installation, and training.',
-        image: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=800',
+        image: '/images/services/fire.jpg',
         features: ['Extinguishers', 'Fire Training', 'Equipment Supply'],
     },
     {
@@ -75,7 +75,7 @@ const services: Service[] = [
         ),
         title: 'Investigations',
         description: 'Professional forensic investigations, background checks, and surveillance operations.',
-        image: 'https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5c?q=80&w=800',
+        image: '/images/services/investigations.jpg',
         features: ['Forensics', 'Background Checks', 'Undercover Ops'],
     },
 ];
@@ -133,7 +133,7 @@ export default function ServicesSection() {
                         <div
                             key={service.title}
                             data-index={index}
-                            className={`group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#1A3A6E]/20 transition-all duration-500 ${visibleCards.has(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            className={`group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#1A3A6E]/20 transition-all duration-500 hover:-translate-y-2 ${visibleCards.has(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                                 }`}
                             style={{ transitionDelay: `${index * 100}ms` }}
                         >
@@ -142,11 +142,11 @@ export default function ServicesSection() {
                                 <img
                                     src={service.image}
                                     alt={service.title}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-700"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0D2140]/60 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0D2140]/60 text-transparent group-hover:from-[#0D2140]/40 transition-all duration-500" />
                                 <div className="absolute bottom-4 left-4">
-                                    <div className="w-12 h-12 rounded-xl bg-[#C41E3A] text-white flex items-center justify-center shadow-lg">
+                                    <div className="w-12 h-12 rounded-xl bg-[#C41E3A] text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-500">
                                         {service.icon}
                                     </div>
                                 </div>
@@ -165,7 +165,7 @@ export default function ServicesSection() {
                                 {service.features.map((feature) => (
                                     <span
                                         key={feature}
-                                        className="px-3 py-1 bg-[#F0F5FA] text-[#1A3A6E] text-sm rounded-full"
+                                        className="px-3 py-1 bg-[#F0F5FA] text-[#1A3A6E] text-sm rounded-full group-hover:bg-[#C41E3A]/10 group-hover:text-[#C41E3A] transition-colors duration-300"
                                     >
                                         {feature}
                                     </span>
