@@ -13,14 +13,7 @@ const services = [
         ),
         title: 'Security Guarding',
         description: 'Professional armed and unarmed security personnel providing comprehensive protection for your premises, assets, and people.',
-        features: [
-            'Residential Security - Home protection day & night',
-            'Commercial Security - Office, retail & industrial sites',
-            'Government Facilities - Airports, embassies, institutions',
-            'Construction Sites - Equipment & materials protection',
-            'Rapid Alarm Response - Quick reaction to emergencies',
-            'Event Security & Crowd Control',
-        ],
+        features: ['Residential Security', 'Commercial Security', 'Government Facilities', 'Construction Sites', 'Rapid Alarm Response', 'Event Security & Crowd Control'],
         image: '/images/services/guarding.jpg',
         highlight: 'All guards must have Certificate of Good Conduct from CID Headquarters',
     },
@@ -33,14 +26,7 @@ const services = [
         ),
         title: 'CCTV & Surveillance',
         description: 'State-of-the-art surveillance systems with HD/4K cameras, remote monitoring, and intelligent analytics.',
-        features: [
-            'HD & 4K Camera Systems',
-            'Night Vision & IR Cameras',
-            'Remote Monitoring & Mobile Access',
-            'Cloud & Local Storage Options',
-            'Motion Detection & Smart Alerts',
-            'Professional Installation & Maintenance',
-        ],
+        features: ['HD & 4K Camera Systems', 'Night Vision & IR Cameras', 'Remote Monitoring & Mobile Access', 'Cloud & Local Storage', 'Motion Detection & Smart Alerts', 'Professional Installation'],
         image: '/images/services/cctv.jpg',
         highlight: 'Supply, installation, servicing and maintenance of all brands',
     },
@@ -53,14 +39,7 @@ const services = [
         ),
         title: 'VIP Protection',
         description: 'Executive protection services for high-profile individuals, corporate executives, dignitaries, and celebrities.',
-        features: [
-            'Close Protection for CEOs & Directors',
-            'Secure Transportation & Motorcades',
-            'Residential Protection (24hr Live-in)',
-            'Event & Travel Security',
-            'Specialized Women Protection',
-            'Counter-Terrorism Trained Personnel',
-        ],
+        features: ['Close Protection for CEOs', 'Secure Transportation', 'Residential Protection (24hr)', 'Event & Travel Security', 'Women Protection', 'Counter-Terrorism Personnel'],
         image: '/images/services/vip.jpg',
         highlight: 'Discreet, professional, and highly trained bodyguards',
     },
@@ -72,15 +51,8 @@ const services = [
             </svg>
         ),
         title: 'Dog Services',
-        description: 'Highly trained security dogs including German Shepherds, Rottweilers, Dobermans, and Boerbulls for patrol and protection.',
-        features: [
-            'Rottweiler Guard Dogs',
-            'German Shepherd Patrol Dogs',
-            'Doberman Protection Dogs',
-            'Boerbull Security Dogs',
-            'Professional Dog Handler Training',
-            'K9 Unit Deployment',
-        ],
+        description: 'Highly trained security dogs including German Shepherds, Rottweilers, Dobermans, and Boerbulls.',
+        features: ['Rottweiler Guard Dogs', 'German Shepherd Patrol Dogs', 'Doberman Protection Dogs', 'Boerbull Security Dogs', 'Professional Dog Handler Training', 'K9 Unit Deployment'],
         image: '/images/services/dogs.jpg',
         highlight: 'All dogs are professionally trained for security operations',
     },
@@ -93,15 +65,8 @@ const services = [
             </svg>
         ),
         title: 'Fire Safety',
-        description: 'Complete fire safety solutions including equipment supply, installation, maintenance, and comprehensive training programs.',
-        features: [
-            'Fire Extinguishers (All Types)',
-            'Fire Blankets & Hose Reels',
-            'Smoke & Heat Detectors',
-            'Fire Alarm Systems',
-            'Fire Safety Training Programs',
-            'Annual Servicing & Maintenance',
-        ],
+        description: 'Complete fire safety solutions including equipment supply, installation, maintenance, and comprehensive training.',
+        features: ['Fire Extinguishers (All Types)', 'Fire Blankets & Hose Reels', 'Smoke & Heat Detectors', 'Fire Alarm Systems', 'Fire Safety Training', 'Annual Servicing'],
         image: '/images/services/fire.jpg',
         highlight: 'Certified fire safety equipment and trained instructors',
     },
@@ -114,14 +79,7 @@ const services = [
         ),
         title: 'Investigations',
         description: 'Professional forensic investigations, background checks, surveillance operations, and intelligence gathering.',
-        features: [
-            'Forensic Investigations',
-            'Undercover Operations',
-            'Personal Character Research',
-            'Criminal Tracking & Detection',
-            'Staff Screening & HR Checks',
-            'Surveillance Operations',
-        ],
+        features: ['Forensic Investigations', 'Undercover Operations', 'Personal Character Research', 'Criminal Tracking', 'Staff Screening', 'Surveillance Operations'],
         image: '/images/services/investigations.jpg',
         highlight: 'Confidential and professional investigation services',
     },
@@ -134,14 +92,7 @@ const services = [
         ),
         title: 'Training & Consultancy',
         description: 'Professional security training programs, guard recruitment, and security audit consultancy services.',
-        features: [
-            'Guard Training & Certification',
-            'First Aid Training',
-            'Counter-Terrorism Training',
-            'Fire Safety Training',
-            'Security Audits & Consultancy',
-            'Staff Recruitment Services',
-        ],
+        features: ['Guard Training & Certification', 'First Aid Training', 'Counter-Terrorism Training', 'Fire Safety Training', 'Security Audits', 'Staff Recruitment'],
         image: '/images/services/guarding.jpg',
         highlight: 'PSRA-compliant training programs',
     },
@@ -154,14 +105,7 @@ const services = [
         ),
         title: 'Access Control & Alarms',
         description: 'Advanced access control systems, biometric solutions, intruder alarms, and electric fence installation.',
-        features: [
-            'Biometric Access Systems',
-            'Card & PIN Access Control',
-            'Intruder Alarm Systems',
-            'Electric Fence Installation',
-            'Gate Automation',
-            'Integrated Security Systems',
-        ],
+        features: ['Biometric Access Systems', 'Card & PIN Access Control', 'Intruder Alarm Systems', 'Electric Fence Installation', 'Gate Automation', 'Integrated Security Systems'],
         image: '/images/services/cctv.jpg',
         highlight: 'Cutting-edge technology for modern security needs',
     },
@@ -192,22 +136,23 @@ export default function ServicesPage() {
     return (
         <>
             {/* Hero */}
-            <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#0D2140] via-[#1A3A6E] to-[#0D2140] overflow-hidden">
-                <div className="absolute inset-0 opacity-[0.03]" style={{
-                    backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-                    backgroundSize: '50px 50px'
+            <section className="relative pt-32 pb-20 bg-[#0a0a0a] overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.02]" style={{
+                    backgroundImage: `linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)`,
+                    backgroundSize: '60px 60px'
                 }} />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#c9a84c]/5 rounded-full blur-[150px]" />
                 <div className="container mx-auto px-6 relative z-10 text-center">
-                    <span className="inline-block px-4 py-2 bg-white/10 text-white rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
-                        COMPREHENSIVE SECURITY SOLUTIONS
+                    <span className="inline-block px-4 py-2 bg-[#c9a84c]/10 text-[#c9a84c] rounded-full text-sm font-semibold mb-6 backdrop-blur-sm uppercase tracking-widest" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        Comprehensive Security Solutions
                     </span>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.02em' }}>
                         Our{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E63350] to-[#C41E3A]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4b96a] to-[#c9a84c]">
                             Services
                         </span>
                     </h1>
-                    <p className="text-xl text-white/70 max-w-2xl mx-auto">
+                    <p className="text-xl text-[#999999] max-w-2xl mx-auto">
                         From manned guarding to cutting-edge surveillance technology, we provide
                         end-to-end security solutions tailored to your needs.
                     </p>
@@ -215,7 +160,7 @@ export default function ServicesPage() {
             </section>
 
             {/* Services List */}
-            <section className="py-20 bg-white">
+            <section className="py-20 bg-[#1a1a1a]">
                 <div className="container mx-auto px-6">
                     <div className="space-y-16">
                         {services.map((service, index) => (
@@ -225,29 +170,29 @@ export default function ServicesPage() {
                                 data-index={index}
                                 className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-700 ${visibleItems.has(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                                     } ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-                                style={{ transitionDelay: `${index * 100}ms` }}
+                                style={{ transitionDelay: `${index * 100}ms`, transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)' }}
                             >
                                 {/* Content */}
                                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#1A3A6E] to-[#0D2140] text-white flex items-center justify-center mb-6">
+                                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#c9a84c] to-[#a8892e] text-[#0a0a0a] flex items-center justify-center mb-6">
                                         {service.icon}
                                     </div>
-                                    <h2 className="text-3xl font-bold text-[#0D2140] mb-4">{service.title}</h2>
-                                    <p className="text-lg text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                                    <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>{service.title}</h2>
+                                    <p className="text-lg text-[#999999] mb-6 leading-relaxed">{service.description}</p>
 
                                     <ul className="space-y-3 mb-6">
                                         {service.features.map((feature) => (
                                             <li key={feature} className="flex items-start gap-3">
-                                                <svg className="w-5 h-5 text-[#C41E3A] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <svg className="w-5 h-5 text-[#c9a84c] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                                 </svg>
-                                                <span className="text-gray-700">{feature}</span>
+                                                <span className="text-[#e8e6e1]">{feature}</span>
                                             </li>
                                         ))}
                                     </ul>
 
                                     {service.highlight && (
-                                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C41E3A]/10 text-[#C41E3A] rounded-lg text-sm font-medium">
+                                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c9a84c]/10 text-[#c9a84c] rounded-lg text-sm font-medium border border-[#c9a84c]/20">
                                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                                             </svg>
@@ -264,15 +209,15 @@ export default function ServicesPage() {
                                             alt={service.title}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-[#1A3A6E]/40 to-transparent opacity-60" />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-[#0a0a0a]/60 to-transparent opacity-60" />
 
                                         {/* Floating Badge */}
-                                        <div className="absolute top-6 right-6 w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white p-3 shadow-lg">
+                                        <div className="absolute top-6 right-6 w-16 h-16 rounded-2xl bg-[#0a0a0a]/50 backdrop-blur-md border border-[#c9a84c]/20 flex items-center justify-center text-[#c9a84c] p-3 shadow-lg">
                                             {service.icon}
                                         </div>
 
-                                        {/* Decorative frame */}
-                                        <div className="absolute inset-4 border border-white/20 rounded-2xl pointer-events-none" />
+                                        {/* Decorative gold frame */}
+                                        <div className="absolute inset-4 border border-[#c9a84c]/20 rounded-2xl pointer-events-none" />
                                     </div>
                                 </div>
                             </div>
@@ -282,24 +227,27 @@ export default function ServicesPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-20 bg-gradient-to-br from-[#0D2140] to-[#1A3A6E]">
+            <section className="py-20 bg-[#0a0a0a]">
                 <div className="container mx-auto px-6 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                         Need a Custom Security Solution?
                     </h2>
-                    <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+                    <p className="text-xl text-[#999999] mb-8 max-w-2xl mx-auto">
                         Contact us today for a free consultation and personalized security assessment.
                     </p>
                     <div className="flex flex-wrap gap-4 justify-center">
                         <Link
                             href="/contact"
-                            className="px-8 py-4 bg-gradient-to-r from-[#C41E3A] to-[#A01830] text-white font-semibold rounded-xl shadow-lg hover:shadow-[0_0_40px_rgba(196,30,58,0.4)] hover:-translate-y-1 transition-all duration-300"
+                            className="px-8 py-4 bg-gradient-to-r from-[#c9a84c] to-[#a8892e] text-[#0a0a0a] font-bold rounded-xl shadow-lg hover:shadow-[0_0_40px_rgba(201,168,76,0.4)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group uppercase tracking-wider"
+                            style={{ fontFamily: 'Montserrat, sans-serif' }}
                         >
-                            Request a Quotation
+                            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                            <span className="relative z-10">Request a Quotation</span>
                         </Link>
                         <a
                             href="tel:+254752285595"
-                            className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 flex items-center gap-2"
+                            className="px-8 py-4 bg-transparent backdrop-blur-sm text-[#c9a84c] font-semibold rounded-xl border-2 border-[#c9a84c]/30 hover:bg-[#c9a84c]/10 hover:border-[#c9a84c]/60 transition-all duration-300 flex items-center gap-2 uppercase tracking-wider"
+                            style={{ fontFamily: 'Montserrat, sans-serif' }}
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

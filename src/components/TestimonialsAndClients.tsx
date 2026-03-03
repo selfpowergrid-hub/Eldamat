@@ -64,50 +64,53 @@ export default function TestimonialsAndClients() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-24 bg-white relative overflow-hidden">
+        <section ref={sectionRef} className="py-24 bg-[#1a1a1a] relative overflow-hidden">
             {/* Background */}
-            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#F0F5FA] to-transparent" />
+            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Testimonials */}
                 <div className={`max-w-4xl mx-auto mb-24 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     <div className="text-center mb-12">
-                        <span className="inline-block px-4 py-2 bg-[#1A3A6E]/10 text-[#1A3A6E] rounded-full text-sm font-semibold mb-4">
-                            TESTIMONIALS
+                        <span className="inline-block px-4 py-2 bg-[#c9a84c]/10 text-[#c9a84c] rounded-full text-sm font-semibold mb-4 uppercase tracking-widest" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                            Testimonials
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#0D2140]">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.02em' }}>
                             What Our Clients Say
                         </h2>
                     </div>
 
                     {/* Testimonial Card */}
-                    <div className="relative bg-gradient-to-br from-[#0D2140] to-[#1A3A6E] rounded-3xl p-8 md:p-12 text-white overflow-hidden">
+                    <div className="relative bg-[#2d2d2d] rounded-3xl p-8 md:p-12 text-white overflow-hidden border border-[#3a3a3a]">
                         {/* Quote Icon */}
-                        <svg className="absolute top-8 left-8 w-16 h-16 text-white/10" fill="currentColor" viewBox="0 0 24 24">
+                        <svg className="absolute top-8 left-8 w-16 h-16 text-[#c9a84c]/10" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                         </svg>
 
+                        {/* Gold accent top line */}
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#c9a84c] to-[#a8892e]" />
+
                         {/* Content */}
                         <div className="relative z-10">
-                            <p className="text-xl md:text-2xl leading-relaxed mb-8 min-h-[100px]">
+                            <p className="text-xl md:text-2xl leading-relaxed mb-8 min-h-[100px] text-[#e8e6e1]">
                                 &ldquo;{testimonials[activeTestimonial].content}&rdquo;
                             </p>
 
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#C41E3A] to-[#A01830] flex items-center justify-center text-xl font-bold">
+                                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c9a84c] to-[#a8892e] flex items-center justify-center text-xl font-bold text-[#0a0a0a]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                                         {testimonials[activeTestimonial].name.split(' ').map(n => n[0]).join('')}
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold text-lg">{testimonials[activeTestimonial].name}</h4>
-                                        <p className="text-white/60">{testimonials[activeTestimonial].role}</p>
+                                        <h4 className="font-semibold text-lg text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>{testimonials[activeTestimonial].name}</h4>
+                                        <p className="text-[#999999]">{testimonials[activeTestimonial].role}</p>
                                     </div>
                                 </div>
 
-                                {/* Rating */}
+                                {/* Rating - Gold Stars */}
                                 <div className="flex gap-1">
                                     {[...Array(5)].map((_, i) => (
-                                        <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg key={i} className="w-5 h-5 text-[#c9a84c]" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                         </svg>
                                     ))}
@@ -122,8 +125,8 @@ export default function TestimonialsAndClients() {
                                     key={index}
                                     onClick={() => setActiveTestimonial(index)}
                                     className={`w-3 h-3 rounded-full transition-all duration-300 ${index === activeTestimonial
-                                            ? 'bg-[#C41E3A] w-8'
-                                            : 'bg-white/30 hover:bg-white/50'
+                                        ? 'bg-[#c9a84c] w-8'
+                                        : 'bg-[#3a3a3a] hover:bg-[#6b6b6b]'
                                         }`}
                                 />
                             ))}
@@ -134,10 +137,10 @@ export default function TestimonialsAndClients() {
                 {/* Clients Section */}
                 <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     <div className="text-center mb-12">
-                        <span className="inline-block px-4 py-2 bg-[#C41E3A]/10 text-[#C41E3A] rounded-full text-sm font-semibold mb-4">
-                            OUR CLIENTS
+                        <span className="inline-block px-4 py-2 bg-[#c9a84c]/10 text-[#c9a84c] rounded-full text-sm font-semibold mb-4 uppercase tracking-widest" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                            Our Clients
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#0D2140]">
+                        <h2 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.02em' }}>
                             Trusted by Leading Organizations
                         </h2>
                     </div>
@@ -147,10 +150,10 @@ export default function TestimonialsAndClients() {
                         {clients.map((client, index) => (
                             <div
                                 key={client}
-                                className="group bg-[#F0F5FA] hover:bg-[#1A3A6E] rounded-xl p-6 flex items-center justify-center transition-all duration-300 cursor-default"
+                                className="group bg-[#2d2d2d] hover:bg-gradient-to-br hover:from-[#c9a84c] hover:to-[#a8892e] rounded-xl p-6 flex items-center justify-center transition-all duration-300 cursor-default border border-[#3a3a3a] hover:border-transparent"
                                 style={{ transitionDelay: `${index * 50}ms` }}
                             >
-                                <span className="text-lg font-semibold text-[#1A3A6E] group-hover:text-white transition-colors text-center">
+                                <span className="text-lg font-semibold text-[#e8e6e1] group-hover:text-[#0a0a0a] transition-colors text-center" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                                     {client}
                                 </span>
                             </div>

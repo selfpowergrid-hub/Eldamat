@@ -16,7 +16,7 @@ COMPANY INFORMATION:
 - Headquarters: Zul Arcade, Ground Floor, Oginga Odinga Street, Nairobi
 - Branch: Donholm, Nairobi
 - Phone: +254 752 285 595 | +254 725 285 595
-- Email: eldamatsec@gmail.com
+- Email: Lngetich@eldamatsec.co.ke | operation@eldamatsec.co.ke
 - Licensed by PSRA (Private Security Regulatory Authority)
 
 SERVICES OFFERED:
@@ -46,10 +46,10 @@ Always be helpful, professional, and guide visitors to contact the company for q
 
 const quickResponses: { [key: string]: string } = {
     'services': 'We offer comprehensive security services including:\n\n🛡️ **Security Guarding** - 24/7 professional guards\n📹 **CCTV Installation** - Latest surveillance technology\n🐕 **Dog Services** - Trained guard dogs\n👔 **VIP Protection** - Executive bodyguard services\n🔥 **Fire Safety** - Equipment & training\n🔍 **Investigations** - Forensic & undercover\n\nWould you like detailed information about any specific service?',
-    'contact': 'You can reach us through:\n\n📞 **Phone:** +254 752 285 595\n📱 **WhatsApp:** +254 725 285 595\n📧 **Email:** eldamatsec@gmail.com\n📍 **Office:** Zul Arcade, Ground Floor, Oginga Odinga Street, Nairobi\n\nOur team is available 24/7 for emergencies!',
-    'quote': 'I\'d be happy to help you get a quotation! For an accurate estimate, we\'ll need to know:\n\n1. Type of security service needed\n2. Location of the premises\n3. Number of guards/hours required\n4. Any special requirements\n\nYou can fill out our contact form or call us directly at **+254 752 285 595** for a free consultation.',
-    'price': 'Our pricing is customized based on:\n\n• Type of service\n• Duration and hours\n• Number of personnel\n• Equipment required\n• Location\n\nFor day/night guard services, dog handlers, and other rates, please contact us for a personalized quotation. Call **+254 752 285 595** or request a quotation on our contact page.',
-    'emergency': '🚨 **For Emergencies, Call Immediately:**\n\n📞 **+254 752 285 595**\n📞 **+254 725 285 595**\n\nOur rapid response team is available 24/7!',
+    'contact': 'You can reach us through:\n\n📞 **Phone:** [+254 752 285 595](tel:+254752285595)\n📱 **WhatsApp:** [+254 725 285 595](tel:+254725285595)\n📧 **Email:** operation@eldamatsec.co.ke\n📍 **Office:** Zul Arcade, Ground Floor, Oginga Odinga Street, Nairobi\n\nOur team is available 24/7 for emergencies!',
+    'quote': 'I\'d be happy to help you get a quotation! For an accurate estimate, we\'ll need to know:\n\n1. Type of security service needed\n2. Location of the premises\n3. Number of guards/hours required\n4. Any special requirements\n\nYou can fill out our contact form or call us directly at [+254 752 285 595](tel:+254752285595) for a free consultation.',
+    'price': 'Our pricing is customized based on:\n\n• Type of service\n• Duration and hours\n• Number of personnel\n• Equipment required\n• Location\n\nFor day/night guard services, dog handlers, and other rates, please contact us for a personalized quotation. Call [+254 752 285 595](tel:+254752285595) or request a quotation on our contact page.',
+    'emergency': '🚨 **For Emergencies, Call Immediately:**\n\n📞 [+254 752 285 595](tel:+254752285595)\n📞 [+254 725 285 595](tel:+254725285595)\n\nOur rapid response team is available 24/7!',
 };
 
 export default function AIChat() {
@@ -77,7 +77,6 @@ export default function AIChat() {
     const generateResponse = (userMessage: string): string => {
         const lowerMessage = userMessage.toLowerCase();
 
-        // Check for quick responses
         if (lowerMessage.includes('service') || lowerMessage.includes('offer') || lowerMessage.includes('provide')) {
             return quickResponses['services'];
         }
@@ -115,7 +114,6 @@ export default function AIChat() {
             return 'You\'re welcome! 😊 If you have any more questions about our security services, feel free to ask. For immediate assistance, you can always call us at **+254 752 285 595**. Stay safe!';
         }
 
-        // Default response
         return 'Thank you for your interest in Eldamat Security Services! 🛡️\n\nI can help you with:\n• Our security services\n• Getting a quotation\n\n• Contact information\n• Emergency assistance\n\nPlease let me know what you\'d like to know more about, or call us directly at **+254 752 285 595** for immediate assistance.';
     };
 
@@ -134,7 +132,6 @@ export default function AIChat() {
         setInput('');
         setIsTyping(true);
 
-        // Simulate AI thinking
         setTimeout(() => {
             const response = generateResponse(userMessage.content);
             const assistantMessage: Message = {
@@ -157,10 +154,10 @@ export default function AIChat() {
 
     return (
         <>
-            {/* Chat Button */}
+            {/* Chat Button - Gold Theme */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-[#C41E3A] to-[#A01830] text-white shadow-lg hover:shadow-[0_0_40px_rgba(196,30,58,0.5)] hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+                className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-[#c9a84c] to-[#a8892e] text-[#0a0a0a] shadow-[0_0_30px_rgba(201,168,76,0.3)] hover:shadow-[0_0_50px_rgba(201,168,76,0.5)] hover:scale-110 transition-all duration-300 flex items-center justify-center group"
                 aria-label="Open AI Chat"
             >
                 {isOpen ? (
@@ -172,25 +169,24 @@ export default function AIChat() {
                         <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
-                        <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse border-2 border-white" />
+                        <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse border-2 border-[#0a0a0a]" />
                     </>
                 )}
             </button>
 
-            {/* Chat Panel */}
+            {/* Chat Panel - Dark Theme */}
             {isOpen && (
-                <div className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-3rem)] h-[520px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-scale-in border border-gray-100">
+                <div className="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-3rem)] h-[520px] bg-[#1a1a1a] rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-scale-in border border-[#c9a84c]/20">
                     {/* Header */}
-                    <div className="bg-gradient-to-r from-[#1A3A6E] to-[#0D2140] p-4 text-white">
+                    <div className="bg-gradient-to-r from-[#c9a84c] to-[#a8892e] p-4 text-[#0a0a0a]">
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-xl overflow-hidden bg-white flex items-center justify-center p-0.5">
                                 <img src="/images/logo.svg" alt="Eldamat Logo" className="w-full h-full object-contain" />
                             </div>
-                            <div>              </div>
                             <div>
-                                <h3 className="font-semibold">Eldamat AI Assistant</h3>
-                                <div className="flex items-center gap-1.5 text-xs text-white/70">
-                                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                                <h3 className="font-semibold" style={{ fontFamily: 'Montserrat, sans-serif' }}>Eldamat AI Assistant</h3>
+                                <div className="flex items-center gap-1.5 text-xs text-[#0a0a0a]/70">
+                                    <span className="w-2 h-2 rounded-full bg-green-700 animate-pulse" />
                                     Online 24/7
                                 </div>
                             </div>
@@ -198,7 +194,7 @@ export default function AIChat() {
                     </div>
 
                     {/* Messages */}
-                    <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+                    <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#0a0a0a]">
                         {messages.map((message) => (
                             <div
                                 key={message.id}
@@ -206,8 +202,8 @@ export default function AIChat() {
                             >
                                 <div
                                     className={`max-w-[85%] rounded-2xl px-4 py-3 ${message.role === 'user'
-                                        ? 'bg-gradient-to-r from-[#1A3A6E] to-[#0D2140] text-white rounded-br-md'
-                                        : 'bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md'
+                                        ? 'bg-gradient-to-r from-[#c9a84c] to-[#a8892e] text-[#0a0a0a] rounded-br-md'
+                                        : 'bg-[#2d2d2d] text-[#e8e6e1] border border-[#3a3a3a] rounded-bl-md'
                                         }`}
                                 >
                                     <div
@@ -221,11 +217,11 @@ export default function AIChat() {
                         ))}
                         {isTyping && (
                             <div className="flex justify-start">
-                                <div className="bg-white rounded-2xl px-4 py-3 shadow-sm border border-gray-100">
+                                <div className="bg-[#2d2d2d] rounded-2xl px-4 py-3 border border-[#3a3a3a]">
                                     <div className="flex gap-1">
-                                        <span className="w-2 h-2 bg-gray-300 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                                        <span className="w-2 h-2 bg-gray-300 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                                        <span className="w-2 h-2 bg-gray-300 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                                        <span className="w-2 h-2 bg-[#c9a84c] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                                        <span className="w-2 h-2 bg-[#c9a84c] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                                        <span className="w-2 h-2 bg-[#c9a84c] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                                     </div>
                                 </div>
                             </div>
@@ -234,7 +230,7 @@ export default function AIChat() {
                     </div>
 
                     {/* Quick Actions */}
-                    <div className="px-4 py-2 border-t border-gray-100 bg-white">
+                    <div className="px-4 py-2 border-t border-[#2d2d2d] bg-[#1a1a1a]">
                         <div className="flex gap-2 overflow-x-auto pb-2">
                             {quickButtons.map((btn) => (
                                 <button
@@ -243,7 +239,7 @@ export default function AIChat() {
                                         setInput(btn.query);
                                         handleSubmit({ preventDefault: () => { } } as React.FormEvent);
                                     }}
-                                    className="flex-shrink-0 px-3 py-1.5 text-xs font-medium bg-gray-100 hover:bg-[#1A3A6E] hover:text-white rounded-full transition-colors"
+                                    className="flex-shrink-0 px-3 py-1.5 text-xs font-medium bg-[#2d2d2d] text-[#999999] hover:bg-[#c9a84c] hover:text-[#0a0a0a] rounded-full transition-colors border border-[#3a3a3a] hover:border-transparent"
                                 >
                                     {btn.label}
                                 </button>
@@ -252,19 +248,19 @@ export default function AIChat() {
                     </div>
 
                     {/* Input */}
-                    <form onSubmit={handleSubmit} className="p-4 border-t border-gray-100 bg-white">
+                    <form onSubmit={handleSubmit} className="p-4 border-t border-[#2d2d2d] bg-[#1a1a1a]">
                         <div className="flex gap-2">
                             <input
                                 type="text"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 placeholder="Type a message..."
-                                className="flex-1 px-4 py-3 rounded-xl border border-gray-200 focus:border-[#1A3A6E] focus:ring-2 focus:ring-[#1A3A6E]/20 outline-none text-sm transition-all"
+                                className="flex-1 px-4 py-3 rounded-xl bg-[#0a0a0a] border border-[#3a3a3a] text-white placeholder-[#6b6b6b] focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 outline-none text-sm transition-all"
                             />
                             <button
                                 type="submit"
                                 disabled={!input.trim()}
-                                className="px-4 py-3 bg-gradient-to-r from-[#C41E3A] to-[#A01830] text-white rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                                className="px-4 py-3 bg-gradient-to-r from-[#c9a84c] to-[#a8892e] text-[#0a0a0a] rounded-xl hover:shadow-[0_0_20px_rgba(201,168,76,0.3)] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                             >
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />

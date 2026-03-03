@@ -7,6 +7,7 @@ interface Service {
     title: string;
     description: string;
     image: string;
+    images?: string[];
     features: string[];
 }
 
@@ -28,9 +29,16 @@ const services: Service[] = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
         ),
-        title: 'Security guarding',
+        title: 'Security Guarding',
         description: 'Professional armed and unarmed security personnel for your premises, events, and VIP protection.',
         image: '/images/services/guarding.jpg',
+        images: [
+            '/images/security/1.jpg',
+            '/images/security/2.jpg',
+            '/images/security/3.jpg',
+            '/images/security/4.jpg',
+            '/images/security/5.jpg'
+        ],
         features: ['24/7 Coverage', 'Trained Guards', 'PSRA Licensed'],
     },
     {
@@ -39,7 +47,7 @@ const services: Service[] = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
         ),
-        title: 'vip Protection',
+        title: 'VIP Protection',
         description: 'Executive protection services for high-profile individuals, CEOs, and dignitaries.',
         image: '/images/services/vip.jpg',
         features: ['Close Protection', 'Secure Transport', 'Advance Recon'],
@@ -62,7 +70,7 @@ const services: Service[] = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
             </svg>
         ),
-        title: 'fire safety',
+        title: 'Fire Safety',
         description: 'Comprehensive fire safety solutions including equipment, installation, and training.',
         image: '/images/services/fire.jpg',
         features: ['Extinguishers', 'Fire Training', 'Equipment Supply'],
@@ -79,6 +87,44 @@ const services: Service[] = [
         features: ['Forensics', 'Background Checks', 'Undercover Ops'],
     },
 ];
+
+function ServiceImage({ service }: { service: Service }) {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+        if (!service.images || service.images.length <= 1) return;
+
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % service.images!.length);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [service.images]);
+
+    if (!service.images) {
+        return (
+            <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-700"
+            />
+        );
+    }
+
+    return (
+        <div className="relative w-full h-full bg-[#1a1a1a]">
+            {service.images.map((img, idx) => (
+                <img
+                    key={img}
+                    src={img}
+                    alt={`${service.title} ${idx + 1}`}
+                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                        }`}
+                />
+            ))}
+        </div>
+    );
+}
 
 export default function ServicesSection() {
     const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
@@ -104,24 +150,24 @@ export default function ServicesSection() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-24 bg-gradient-to-b from-white to-[#F0F5FA] relative overflow-hidden">
+        <section ref={sectionRef} className="py-24 bg-[#1a1a1a] relative overflow-hidden">
             {/* Background Decoration */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#1A3A6E]/5 rounded-full blur-[100px]" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#C41E3A]/5 rounded-full blur-[80px]" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#c9a84c]/3 rounded-full blur-[120px]" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#c9a84c]/2 rounded-full blur-[100px]" />
 
             <div className="container mx-auto px-6 relative z-10">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="inline-block px-4 py-2 bg-[#C41E3A]/10 text-[#C41E3A] rounded-full text-sm font-semibold mb-4">
-                        OUR SERVICES
+                    <span className="inline-block px-4 py-2 bg-[#c9a84c]/10 text-[#c9a84c] rounded-full text-sm font-semibold mb-4 uppercase tracking-widest" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        Our Services
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#0D2140] mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif', letterSpacing: '0.02em' }}>
                         Comprehensive Security{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C41E3A] to-[#A01830]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4b96a] to-[#c9a84c]">
                             Solutions
                         </span>
                     </h2>
-                    <p className="text-lg text-gray-600 leading-relaxed">
+                    <p className="text-lg text-[#999999] leading-relaxed">
                         From manned guarding to advanced surveillance systems, we provide end-to-end
                         security services tailored to protect what matters most to you.
                     </p>
@@ -133,30 +179,26 @@ export default function ServicesSection() {
                         <div
                             key={service.title}
                             data-index={index}
-                            className={`group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#1A3A6E]/20 transition-all duration-500 hover:-translate-y-2 ${visibleCards.has(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                            className={`group relative bg-[#2d2d2d] rounded-2xl p-8 border border-[#3a3a3a] hover:border-[#c9a84c]/30 hover:bg-[#3a3a3a] transition-all duration-500 hover:-translate-y-2 ${visibleCards.has(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                                 }`}
-                            style={{ transitionDelay: `${index * 100}ms` }}
+                            style={{ transitionDelay: `${index * 100}ms`, transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)' }}
                         >
                             {/* Service Image */}
-                            <div className="relative h-48 -mx-8 -mt-8 mb-8 overflow-hidden rounded-t-2xl">
-                                <img
-                                    src={service.image}
-                                    alt={service.title}
-                                    className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0D2140]/60 text-transparent group-hover:from-[#0D2140]/40 transition-all duration-500" />
+                            <div className="relative h-80 -mx-8 -mt-8 mb-8 overflow-hidden rounded-t-2xl bg-[#0a0a0a]">
+                                <ServiceImage service={service} />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 to-transparent group-hover:from-[#0a0a0a]/60 transition-all duration-500" />
                                 <div className="absolute bottom-4 left-4">
-                                    <div className="w-12 h-12 rounded-xl bg-[#C41E3A] text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-500">
+                                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#c9a84c] to-[#a8892e] text-[#0a0a0a] flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-500">
                                         {service.icon}
                                     </div>
                                 </div>
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-xl font-bold text-[#0D2140] mb-3 group-hover:text-[#C41E3A] transition-colors">
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                                 {service.title}
                             </h3>
-                            <p className="text-gray-600 mb-6 leading-relaxed">
+                            <p className="text-[#999999] mb-6 leading-relaxed">
                                 {service.description}
                             </p>
 
@@ -165,7 +207,7 @@ export default function ServicesSection() {
                                 {service.features.map((feature) => (
                                     <span
                                         key={feature}
-                                        className="px-3 py-1 bg-[#F0F5FA] text-[#1A3A6E] text-sm rounded-full group-hover:bg-[#C41E3A]/10 group-hover:text-[#C41E3A] transition-colors duration-300"
+                                        className="px-3 py-1 bg-[#1a1a1a] text-[#999999] text-sm rounded-full group-hover:bg-[#c9a84c]/10 group-hover:text-[#c9a84c] transition-colors duration-300 border border-[#3a3a3a] group-hover:border-[#c9a84c]/20"
                                     >
                                         {feature}
                                     </span>
@@ -175,7 +217,8 @@ export default function ServicesSection() {
                             {/* Learn More Link */}
                             <a
                                 href={`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`}
-                                className="inline-flex items-center gap-2 text-[#C41E3A] font-semibold group/link"
+                                className="inline-flex items-center gap-2 text-[#c9a84c] font-semibold group/link uppercase tracking-wider text-sm"
+                                style={{ fontFamily: 'Montserrat, sans-serif' }}
                             >
                                 Learn More
                                 <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,8 +226,8 @@ export default function ServicesSection() {
                                 </svg>
                             </a>
 
-                            {/* Hover Accent */}
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#C41E3A] to-[#E63350] rounded-t-2xl scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                            {/* Hover Gold Accent - Bottom bar */}
+                            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#c9a84c] to-[#a8892e] rounded-b-2xl scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                         </div>
                     ))}
                 </div>
@@ -193,10 +236,12 @@ export default function ServicesSection() {
                 <div className="text-center mt-16">
                     <a
                         href="/services"
-                        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#1A3A6E] to-[#0D2140] text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#c9a84c] to-[#a8892e] text-[#0a0a0a] font-bold rounded-xl shadow-lg hover:shadow-[0_0_40px_rgba(201,168,76,0.3)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group uppercase tracking-wider"
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
-                        View All Services
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                        <span className="relative z-10">View All Services</span>
+                        <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
