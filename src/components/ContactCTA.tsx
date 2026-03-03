@@ -17,15 +17,30 @@ export default function ContactCTA() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-
-        // Reset success message after 5 seconds
-        setTimeout(() => setIsSubmitted(false), 5000);
+            if (response.ok) {
+                setIsSubmitted(true);
+                setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+                // Reset success message after 5 seconds
+                setTimeout(() => setIsSubmitted(false), 5000);
+            } else {
+                const data = await response.json();
+                alert(data.error || 'Failed to send inquiry. Please try again or call us.');
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert('An unexpected error occurred. Please try again or call us directly.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
