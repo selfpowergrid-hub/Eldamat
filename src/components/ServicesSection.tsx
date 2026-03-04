@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 interface Service {
     icon: React.ReactNode;
@@ -103,10 +104,11 @@ function ServiceImage({ service }: { service: Service }) {
 
     if (!service.images) {
         return (
-            <img
+            <Image
                 src={service.image}
                 alt={service.title}
-                className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-700"
+                fill
+                className="object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-700"
             />
         );
     }
@@ -114,11 +116,12 @@ function ServiceImage({ service }: { service: Service }) {
     return (
         <div className="relative w-full h-full bg-[#1a1a1a]">
             {service.images.map((img, idx) => (
-                <img
+                <Image
                     key={img}
                     src={img}
                     alt={`${service.title} ${idx + 1}`}
-                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                    fill
+                    className={`object-cover transition-opacity duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
                         }`}
                 />
             ))}

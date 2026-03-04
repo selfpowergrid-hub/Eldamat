@@ -1,10 +1,13 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-// Initialize Resend with the API key from environment variables
-const resend = new Resend(process.env.RESEND_API_KEY);
+
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: Request) {
+    // Initialize Resend with the API key from environment variables
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     try {
         const body = await req.json();
         const { name, email, phone, service, message, company } = body;
@@ -18,7 +21,7 @@ export async function POST(req: Request) {
         ];
 
         const { data, error } = await resend.emails.send({
-            from: 'Eldamat Website <onboarding@resend.dev>', // Resend default for unverified domains
+            from: 'Eldamat Website <no-reply@eldamatsec.co.ke>', // Using company domain (requires verification in Resend)
             to: recipients,
             subject: `New Quotation Request: ${service} from ${name}`,
             html: `

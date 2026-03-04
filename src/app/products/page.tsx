@@ -68,7 +68,7 @@ export default function ProductsPage() {
     return (
         <>
             {/* Hero */}
-            <section className="relative pt-32 pb-20 bg-[#0a0a0a] overflow-hidden">
+            <section className="relative pt-40 md:pt-32 pb-20 bg-[#0a0a0a] overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.02]" style={{
                     backgroundImage: `linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)`,
                     backgroundSize: '60px 60px'

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const footerLinks = {
     services: [
@@ -34,8 +35,8 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="lg:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-6">
-                            <div className="w-16 h-16 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg">
-                                <img src="/images/logo.svg" alt="Eldamat Logo" className="w-full h-full object-contain p-1" />
+                            <div className="w-16 h-16 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg relative">
+                                <Image src="/images/logo.svg" alt="Eldamat Logo" fill className="object-contain p-1" />
                             </div>
                             <div>
                                 <span className="text-2xl font-bold tracking-widest" style={{ fontFamily: 'Montserrat, sans-serif' }}>ELDAMAT</span>

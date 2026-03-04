@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 const services = [
     {
@@ -136,7 +137,7 @@ export default function ServicesPage() {
     return (
         <>
             {/* Hero */}
-            <section className="relative pt-32 pb-20 bg-[#0a0a0a] overflow-hidden">
+            <section className="relative pt-40 md:pt-32 pb-20 bg-[#0a0a0a] overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.02]" style={{
                     backgroundImage: `linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)`,
                     backgroundSize: '60px 60px'
@@ -204,10 +205,11 @@ export default function ServicesPage() {
                                 {/* Visual */}
                                 <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                                     <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl group relative">
-                                        <img
+                                        <Image
                                             src={service.image}
                                             alt={service.title}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-tr from-[#0a0a0a]/60 to-transparent opacity-60" />
 

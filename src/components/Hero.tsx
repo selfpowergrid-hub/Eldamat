@@ -18,7 +18,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative min-h-screen flex items-center overflow-hidden">
+        <section className="relative min-h-screen flex items-center md:items-center overflow-hidden">
             {/* Background - Deepest Black */}
             <div className="absolute inset-0 bg-[#0a0a0a]" />
 
@@ -44,7 +44,7 @@ export default function Hero() {
             </div>
 
             {/* Content */}
-            <div className="container mx-auto px-6 pt-32 pb-12 relative z-10">
+            <div className="container mx-auto px-6 pt-32 md:pt-32 pb-12 relative z-10">
                 <div className="max-w-4xl">
                     {/* Main Heading */}
                     <h1

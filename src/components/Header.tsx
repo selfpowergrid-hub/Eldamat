@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -26,8 +27,8 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-        ? 'bg-[#0a0a0a]/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)] py-3'
-        : 'bg-transparent py-5'
+        ? 'bg-[#0a0a0a]/95 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)] py-3'
+        : 'bg-[#0a0a0a] md:bg-[#0a0a0a]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)] py-4'
         }`}
       style={{ transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)' }}
     >
@@ -35,8 +36,8 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative">
-            <div className="w-14 h-14 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg group-hover:shadow-[0_0_30px_rgba(201,168,76,0.4)] transition-all duration-300">
-              <img src="/images/logo.svg" alt="Eldamat Logo" className="w-full h-full object-contain p-1" />
+            <div className="w-14 h-14 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg group-hover:shadow-[0_0_30px_rgba(201,168,76,0.4)] transition-all duration-300 relative">
+              <Image src="/images/logo.svg" alt="Eldamat Logo" fill className="object-contain p-1" />
             </div>
             <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#c9a84c] rounded-full animate-pulse" />
           </div>

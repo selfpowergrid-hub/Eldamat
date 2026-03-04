@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 
 interface Message {
     id: string;
@@ -180,8 +181,8 @@ export default function AIChat() {
                     {/* Header */}
                     <div className="bg-gradient-to-r from-[#c9a84c] to-[#a8892e] p-4 text-[#0a0a0a]">
                         <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-xl overflow-hidden bg-white flex items-center justify-center p-0.5">
-                                <img src="/images/logo.svg" alt="Eldamat Logo" className="w-full h-full object-contain" />
+                            <div className="w-10 h-10 rounded-xl overflow-hidden bg-white flex items-center justify-center p-0.5 relative">
+                                <Image src="/images/logo.svg" alt="Eldamat Logo" fill className="object-contain" />
                             </div>
                             <div>
                                 <h3 className="font-semibold" style={{ fontFamily: 'Montserrat, sans-serif' }}>Eldamat AI Assistant</h3>
