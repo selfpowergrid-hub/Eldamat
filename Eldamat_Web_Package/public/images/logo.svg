@@ -1,0 +1,43 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield Shape -->
+  <path d="M120 20L30 50V110C30 165.5 68.4 217.4 120 230C171.6 217.4 210 165.5 210 110V50L120 20Z" fill="white" stroke="#1A3A6E" stroke-width="2"/>
+  
+  <!-- Divided background for eagle area -->
+  <path d="M120 20L30 50V100H210V50L120 20Z" fill="#F0F5FA"/>
+  
+  <!-- Eagle (Bird) Motif -->
+  <g transform="translate(60, 45) scale(0.6)">
+    <!-- Left Wing (Blue) -->
+    <path d="M100 0H0V40H100V0Z" fill="#1A3A6E"/>
+    <path d="M0 50H100V90H0V50Z" fill="#1A3A6E"/>
+    <path d="M0 100H100V140H0V100Z" fill="#1A3A6E"/>
+    <!-- Right Wing (Red) -->
+    <path d="M100 0H200V40H100V0Z" fill="#C41E3A"/>
+    <path d="M100 50H200V90H100V50Z" fill="#C41E3A"/>
+    <path d="M100 100H200V140H100V100Z" fill="#C41E3A"/>
+    <!-- Central Head/Body -->
+    <path d="M100 20C100 20 120 -10 140 20" stroke="#C41E3A" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="100" cy="40" r="15" fill="#1A3A6E"/>
+  </g>
+
+  <!-- Middle Text Section -->
+  <g transform="translate(0, 110)">
+    <rect x="0" y="0" width="240" height="60" fill="white"/>
+    <text x="120" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="22" fill="#C41E3A">ELDAMAT SECURITY</text>
+    <text x="120" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="28" fill="#1A3A6E" letter-spacing="4">SERVICES</text>
+  </g>
+
+  <!-- Bottom Part of Shield -->
+  <path d="M30 170C30 195 45 220 120 230" stroke="#1A3A6E" stroke-width="2" fill="none"/>
+  <path d="M210 170C210 195 195 220 120 230" stroke="#C41E3A" stroke-width="2" fill="none"/>
+  
+  <!-- Split Bottom Fill -->
+  <path d="M30 170V110H120V230C68.4 217.4 30 165.5 30 110V170Z" fill="#1A3A6E" fill-opacity="0.1"/>
+  <path d="M210 170V110H120V230C171.6 217.4 210 165.5 210 110V170Z" fill="#C41E3A" fill-opacity="0.1"/>
+
+  <!-- Keyhole (White) -->
+  <g transform="translate(120, 200)">
+    <circle cx="0" cy="-10" r="6" fill="white"/>
+    <path d="M-4 0L-6 10H6L4 0L0 -4L-4 0Z" fill="white"/>
+  </g>
+</svg>
